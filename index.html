@@ -87,12 +87,42 @@ button:hover{
 <script>
 
 function studentLogin(){
-    alert("ورود دانش‌آموز");
+
+document.querySelector(".container").innerHTML = `
+
+<h2>ورود دانش‌آموز</h2>
+
+<input type="text" placeholder="کد ملی"><br><br>
+
+<input type="password" placeholder="رمز عبور"><br><br>
+
+<button onclick="alert('در حال بررسی ورود...')">
+ورود
+</button>
+
+`;
+
 }
 
 
 function teacherLogin(){
-    alert("ورود استاد");
+
+document.querySelector(".container").innerHTML = `
+
+<h2>ورود استاد</h2>
+
+<input type="text" placeholder="شماره تلفن"><br><br>
+
+<input type="text" placeholder="کد ملی"><br><br>
+
+<input type="password" placeholder="رمز عبور"><br><br>
+
+<button onclick="alert('در حال بررسی ورود...')">
+ورود
+</button>
+
+`;
+
 }
 
 </script>
