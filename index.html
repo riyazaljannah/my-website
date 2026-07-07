@@ -240,21 +240,70 @@ document.getElementById("box").innerHTML=`
 
 function addGrade(){
 
+document.getElementById("box").innerHTML=`
+
+<h2>انتخاب دانش‌آموز</h2>
+
+<button onclick="studentGrade('احمد محمدی')">
+احمد محمدی
+</button>
+
+<br>
+
+<button onclick="studentGrade('علی احمدی')">
+علی احمدی
+</button>
+
+<br>
+
+<button onclick="studentGrade('محمد حسینی')">
+محمد حسینی
+</button>
+
+
+<br>
+
+<button class="back" onclick="teacherEnter()">
+بازگشت
+</button>
+
+`;
+
+}
+
+
+
+function studentGrade(name){
+
+let parts="";
+
+for(let i=1;i<=30;i++){
+
+parts += `
+
+<p>
+جزء ${i}
+
+<input 
+style="width:80px"
+placeholder="نمره">
+
+</p>
+
+`;
+
+}
+
 
 document.getElementById("box").innerHTML=`
 
-<h2>ثبت نمره</h2>
+<h2>ثبت نمره برای ${name}</h2>
+
+${parts}
 
 
-<input placeholder="کد ملی دانش‌آموز"><br><br>
-
-<input placeholder="نام درس"><br><br>
-
-<input placeholder="نمره"><br><br>
-
-
-<button onclick="alert('نمره ثبت شد ✅')">
-ثبت
+<button onclick="alert('نمرات ذخیره شد ✅')">
+ذخیره نمرات
 </button>
 
 
@@ -264,7 +313,6 @@ document.getElementById("box").innerHTML=`
 <button class="back" onclick="teacherEnter()">
 بازگشت
 </button>
-
 
 `;
 
