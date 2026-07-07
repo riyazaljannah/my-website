@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
 
 <meta charset="UTF-8">
@@ -11,7 +12,7 @@
 
 body{
     margin:0;
-    font-family:tahoma, sans-serif;
+    font-family:tahoma;
     background:#f2f2f2;
     text-align:center;
 }
@@ -22,14 +23,10 @@ header{
     padding:30px;
 }
 
-main{
-    padding:40px;
-}
-
 .container{
     background:white;
     padding:30px;
-    margin:30px auto;
+    margin:40px auto;
     width:80%;
     max-width:400px;
     border-radius:15px;
@@ -40,10 +37,10 @@ button{
     color:white;
     border:none;
     padding:12px 25px;
-    font-size:17px;
-    border-radius:8px;
-    cursor:pointer;
     margin:10px;
+    border-radius:8px;
+    font-size:17px;
+    cursor:pointer;
 }
 
 button:hover{
@@ -68,30 +65,33 @@ input{
 
 <body>
 
+
 <header>
+
 <h1>سامانه مدرسه</h1>
+
 </header>
 
 
-<main>
-
 <div class="container" id="box">
+
 
 <h2>ورود به سامانه</h2>
 
 <p>نوع ورود را انتخاب کنید</p>
 
+
 <button onclick="studentLogin()">
 ورود دانش‌آموز
 </button>
+
 
 <button onclick="teacherLogin()">
 ورود استاد
 </button>
 
-</div>
 
-</main>
+</div>
 
 
 
@@ -110,9 +110,11 @@ document.getElementById("box").innerHTML=`
 
 <input type="password" placeholder="رمز عبور"><br><br>
 
-<button onclick="teacherPanel()">
+
+<button onclick="teacherEnter()">
 ورود
 </button>
+
 
 <br>
 
@@ -136,9 +138,11 @@ document.getElementById("box").innerHTML=`
 
 <input type="password" placeholder="رمز عبور"><br><br>
 
-<button onclick="studentPanel()">
+
+<button>
 ورود
 </button>
+
 
 <br>
 
@@ -152,32 +156,78 @@ document.getElementById("box").innerHTML=`
 
 
 
-function teacherPanel(){
+
+function teacherEnter(){
+
 
 document.getElementById("box").innerHTML=`
 
-<h2>پنل استاد</h2>
+<h2>پنل استاد 👨‍🏫</h2>
 
-<button>
-ثبت دانش‌آموز
+
+<button onclick="addStudent()">
+➕ ثبت دانش‌آموز
 </button>
+
 
 <br>
 
-<button>
-ثبت نمره
+
+<button onclick="addGrade()">
+📝 ثبت نمره
 </button>
+
 
 <br>
 
-<button>
-مشاهده کارنامه‌ها
+
+<button onclick="showReports()">
+📄 مشاهده کارنامه‌ها
 </button>
 
+
 <br>
+
 
 <button class="back" onclick="back()">
 خروج
+</button>
+
+
+`;
+
+}
+
+
+
+
+function addStudent(){
+
+
+document.getElementById("box").innerHTML=`
+
+<h2>ثبت دانش‌آموز</h2>
+
+
+<input placeholder="نام دانش‌آموز"><br><br>
+
+<input placeholder="کد ملی"><br><br>
+
+<input placeholder="کلاس"><br><br>
+
+<input placeholder="رمز ورود"><br><br>
+
+
+<button onclick="alert('دانش‌آموز ثبت شد ✅')">
+ذخیره
+</button>
+
+
+<br>
+
+
+<button class="back" onclick="teacherEnter()">
+بازگشت
 </button>
 
 `;
@@ -186,37 +236,66 @@ document.getElementById("box").innerHTML=`
 
 
 
-function studentPanel(){
+
+
+function addGrade(){
+
 
 document.getElementById("box").innerHTML=`
 
-<h2>پنل دانش‌آموز</h2>
+<h2>ثبت نمره</h2>
 
-<button>
-کارنامه من
+
+<input placeholder="کد ملی دانش‌آموز"><br><br>
+
+<input placeholder="نام درس"><br><br>
+
+<input placeholder="نمره"><br><br>
+
+
+<button onclick="alert('نمره ثبت شد ✅')">
+ثبت
 </button>
+
 
 <br>
 
-<button>
-نمرات من
+
+<button class="back" onclick="teacherEnter()">
+بازگشت
 </button>
 
-<br>
-
-<button>
-اطلاعیه‌ها
-</button>
-
-<br>
-
-<button class="back" onclick="back()">
-خروج
-</button>
 
 `;
 
 }
+
+
+
+
+
+function showReports(){
+
+
+document.getElementById("box").innerHTML=`
+
+<h2>کارنامه‌ها</h2>
+
+
+<p>
+لیست کارنامه‌ها بعد از اتصال دیتابیس نمایش داده می‌شود.
+</p>
+
+
+<button class="back" onclick="teacherEnter()">
+بازگشت
+</button>
+
+
+`;
+
+}
+
 
 
 
@@ -231,4 +310,5 @@ location.reload();
 
 
 </body>
+
 </html>
