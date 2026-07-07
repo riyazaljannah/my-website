@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -39,7 +40,7 @@ button{
     color:white;
     border:none;
     padding:12px 25px;
-    font-size:18px;
+    font-size:17px;
     border-radius:8px;
     cursor:pointer;
     margin:10px;
@@ -52,7 +53,6 @@ button:hover{
 input{
     width:80%;
     padding:12px;
-    font-size:16px;
     border-radius:8px;
     border:1px solid #ccc;
 }
@@ -64,6 +64,7 @@ input{
 </style>
 
 </head>
+
 
 <body>
 
@@ -78,13 +79,11 @@ input{
 
 <h2>ورود به سامانه</h2>
 
-<p>نوع ورود خود را انتخاب کنید:</p>
-
+<p>نوع ورود را انتخاب کنید</p>
 
 <button onclick="studentLogin()">
 ورود دانش‌آموز
 </button>
-
 
 <button onclick="teacherLogin()">
 ورود استاد
@@ -95,46 +94,23 @@ input{
 </main>
 
 
+
 <script>
-
-function studentLogin(){
-
-document.getElementById("box").innerHTML = `
-
-<h2>ورود دانش‌آموز</h2>
-
-<input type="text" placeholder="کد ملی"><br><br>
-
-<input type="password" placeholder="رمز عبور"><br><br>
-
-<button onclick="studentEnter()">
-ورود
-</button>
-
-<br>
-
-<button class="back" onclick="back()">
-بازگشت
-</button>
-
-`;
-
-}
 
 
 function teacherLogin(){
 
-document.getElementById("box").innerHTML = `
+document.getElementById("box").innerHTML=`
 
 <h2>ورود استاد</h2>
 
-<input type="text" placeholder="شماره تلفن"><br><br>
+<input placeholder="شماره تلفن"><br><br>
 
-<input type="text" placeholder="کد ملی"><br><br>
+<input placeholder="کد ملی"><br><br>
 
 <input type="password" placeholder="رمز عبور"><br><br>
 
-<button onclick="teacherEnter()">
+<button onclick="teacherPanel()">
 ورود
 </button>
 
@@ -149,18 +125,99 @@ document.getElementById("box").innerHTML = `
 }
 
 
-function teacherEnter(){
 
-alert("ورود استاد - مرحله بعد پنل استاد ساخته می‌شود");
+function studentLogin(){
+
+document.getElementById("box").innerHTML=`
+
+<h2>ورود دانش‌آموز</h2>
+
+<input placeholder="کد ملی"><br><br>
+
+<input type="password" placeholder="رمز عبور"><br><br>
+
+<button onclick="studentPanel()">
+ورود
+</button>
+
+<br>
+
+<button class="back" onclick="back()">
+بازگشت
+</button>
+
+`;
 
 }
 
 
-function studentEnter(){
 
-alert("ورود دانش‌آموز - مرحله بعد کارنامه ساخته می‌شود");
+function teacherPanel(){
+
+document.getElementById("box").innerHTML=`
+
+<h2>پنل استاد</h2>
+
+<button>
+ثبت دانش‌آموز
+</button>
+
+<br>
+
+<button>
+ثبت نمره
+</button>
+
+<br>
+
+<button>
+مشاهده کارنامه‌ها
+</button>
+
+<br>
+
+<button class="back" onclick="back()">
+خروج
+</button>
+
+`;
 
 }
+
+
+
+function studentPanel(){
+
+document.getElementById("box").innerHTML=`
+
+<h2>پنل دانش‌آموز</h2>
+
+<button>
+کارنامه من
+</button>
+
+<br>
+
+<button>
+نمرات من
+</button>
+
+<br>
+
+<button>
+اطلاعیه‌ها
+</button>
+
+<br>
+
+<button class="back" onclick="back()">
+خروج
+</button>
+
+`;
+
+}
+
 
 
 function back(){
@@ -168,6 +225,7 @@ function back(){
 location.reload();
 
 }
+
 
 </script>
 
