@@ -3,27 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>سایت من</title>
+
+<title>سامانه مدرسه</title>
 
 <style>
+
 body{
-    <div class="container">
-    <h1>سامانه مدرسه</h1>
-    <p>لطفاً نوع ورود خود را انتخاب کنید</p>
-
-    <button onclick="studentLogin()">ورود دانش‌آموز</button>
-    <button onclick="teacherLogin()">ورود استاد</button>
-</div>
-
-<script>
-function studentLogin(){
-    alert("ورود دانش‌آموز");
+    margin:0;
+    font-family:tahoma, sans-serif;
+    background:#f2f2f2;
+    text-align:center;
 }
-
-function teacherLogin(){
-    alert("ورود استاد");
-}
-</script>
 
 header{
     background:#0077ff;
@@ -35,6 +25,15 @@ main{
     padding:40px;
 }
 
+.container{
+    background:white;
+    padding:30px;
+    margin:30px auto;
+    width:80%;
+    max-width:400px;
+    border-radius:15px;
+}
+
 button{
     background:#0077ff;
     color:white;
@@ -43,28 +42,61 @@ button{
     font-size:18px;
     border-radius:8px;
     cursor:pointer;
+    margin:10px;
 }
 
 button:hover{
     background:#005fd1;
 }
+
 </style>
+
 </head>
 
 <body>
 
 <header>
-<h1>به سایت من خوش آمدید</h1>
+<h1>سامانه مدرسه</h1>
 </header>
 
-<main>
-<h2>سلام 👋</h2>
-<p>این اولین سایت من است که با GitHub Pages ساخته شده.</p>
 
-<button onclick="alert('سلام! خوش اومدی 😊')">
-کلیک کن
+<main>
+
+<div class="container">
+
+<h2>ورود به سامانه</h2>
+
+<p>نوع ورود خود را انتخاب کنید:</p>
+
+
+<button onclick="studentLogin()">
+ورود دانش‌آموز
 </button>
+
+
+<button onclick="teacherLogin()">
+ورود استاد
+</button>
+
+
+</div>
+
 </main>
+
+
+<script>
+
+function studentLogin(){
+    alert("ورود دانش‌آموز");
+}
+
+
+function teacherLogin(){
+    alert("ورود استاد");
+}
+
+</script>
+
 
 </body>
 </html>
