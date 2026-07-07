@@ -242,30 +242,174 @@ function addGrade(){
 
 document.getElementById("box").innerHTML=`
 
-<h2>انتخاب دانش‌آموز</h2>
+<h2>انتخاب کلاس</h2>
 
-<button onclick="studentGrade('احمد محمدی')">
+
+<button onclick="chooseClass('نورانی')">
+کلاس نورانی
+</button>
+
+<br>
+
+
+<button onclick="chooseClass('روخوانی')">
+کلاس روخوانی
+</button>
+
+<br>
+
+
+<button onclick="chooseClass('حفظ')">
+کلاس حفظ
+</button>
+
+
+<br>
+
+
+<button class="back" onclick="teacherEnter()">
+بازگشت
+</button>
+
+`;
+
+}
+
+
+
+function chooseClass(className){
+
+
+if(className=="نورانی"){
+
+document.getElementById("box").innerHTML=`
+
+<h2>دانش‌آموزان کلاس ${className}</h2>
+
+
+<button>
 احمد محمدی
 </button>
 
 <br>
 
-<button onclick="studentGrade('علی احمدی')">
+<button>
 علی احمدی
 </button>
 
 <br>
 
-<button onclick="studentGrade('محمد حسینی')">
+<button>
 محمد حسینی
 </button>
 
 
 <br>
 
-<button class="back" onclick="teacherEnter()">
+<button class="back" onclick="addGrade()">
 بازگشت
 </button>
+
+`;
+
+}
+
+else{
+
+
+document.getElementById("box").innerHTML=`
+
+<h2>دانش‌آموزان کلاس ${className}</h2>
+
+
+<button onclick="studentGrade('احمد محمدی','${className}')">
+احمد محمدی
+</button>
+
+<br>
+
+
+<button onclick="studentGrade('علی احمدی','${className}')">
+علی احمدی
+</button>
+
+<br>
+
+
+<button onclick="studentGrade('محمد حسینی','${className}')">
+محمد حسینی
+</button>
+
+
+<br>
+
+
+<button class="back" onclick="addGrade()">
+بازگشت
+</button>
+
+`;
+
+}
+
+
+}
+
+
+
+
+function studentGrade(name,className){
+
+let parts="";
+
+
+for(let i=1;i<=30;i++){
+
+
+parts += `
+
+<p>
+جزء ${i}
+
+<input 
+style="width:80px"
+placeholder="نمره">
+
+</p>
+
+
+`;
+
+}
+
+
+
+document.getElementById("box").innerHTML=`
+
+<h2>
+ثبت نمره ${className}
+</h2>
+
+<h3>
+دانش‌آموز: ${name}
+</h3>
+
+
+${parts}
+
+
+<button onclick="alert('نمرات ذخیره شد ✅')">
+ذخیره نمرات
+</button>
+
+
+<br>
+
+
+<button class="back" onclick="chooseClass('${className}')">
+بازگشت
+</button>
+
 
 `;
 
