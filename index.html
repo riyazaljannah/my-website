@@ -49,6 +49,18 @@ button:hover{
     background:#005fd1;
 }
 
+input{
+    width:80%;
+    padding:12px;
+    font-size:16px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+.back{
+    background:#777;
+}
+
 </style>
 
 </head>
@@ -62,7 +74,7 @@ button:hover{
 
 <main>
 
-<div class="container">
+<div class="container" id="box">
 
 <h2>ورود به سامانه</h2>
 
@@ -78,7 +90,6 @@ button:hover{
 ورود استاد
 </button>
 
-
 </div>
 
 </main>
@@ -88,7 +99,7 @@ button:hover{
 
 function studentLogin(){
 
-document.querySelector(".container").innerHTML = `
+document.getElementById("box").innerHTML = `
 
 <h2>ورود دانش‌آموز</h2>
 
@@ -96,8 +107,14 @@ document.querySelector(".container").innerHTML = `
 
 <input type="password" placeholder="رمز عبور"><br><br>
 
-<button onclick="alert('در حال بررسی ورود...')">
+<button onclick="studentEnter()">
 ورود
+</button>
+
+<br>
+
+<button class="back" onclick="back()">
+بازگشت
 </button>
 
 `;
@@ -107,7 +124,7 @@ document.querySelector(".container").innerHTML = `
 
 function teacherLogin(){
 
-document.querySelector(".container").innerHTML = `
+document.getElementById("box").innerHTML = `
 
 <h2>ورود استاد</h2>
 
@@ -117,11 +134,38 @@ document.querySelector(".container").innerHTML = `
 
 <input type="password" placeholder="رمز عبور"><br><br>
 
-<button onclick="alert('در حال بررسی ورود...')">
+<button onclick="teacherEnter()">
 ورود
 </button>
 
+<br>
+
+<button class="back" onclick="back()">
+بازگشت
+</button>
+
 `;
+
+}
+
+
+function teacherEnter(){
+
+alert("ورود استاد - مرحله بعد پنل استاد ساخته می‌شود");
+
+}
+
+
+function studentEnter(){
+
+alert("ورود دانش‌آموز - مرحله بعد کارنامه ساخته می‌شود");
+
+}
+
+
+function back(){
+
+location.reload();
 
 }
 
